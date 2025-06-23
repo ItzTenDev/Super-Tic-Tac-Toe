@@ -77,7 +77,6 @@ func check_win_condition():
 
 
 func _physics_process(delta):
-	print(game_board)
 	if current_opened_game != null and Input.is_action_just_pressed("ui_cancel"):
 		cancel_board_selection()
 	

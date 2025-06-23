@@ -215,9 +215,6 @@ corner_radius_bottom_left = 5
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_4el3i")
-game_board = null
-coords = null
-result = null
 
 [node name="Animator" type="AnimationPlayer" parent="."]
 libraries = {
@@ -281,6 +278,7 @@ columns = 3
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 focus_mode = 0
+mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("2_7tn3r")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = ExtResource("3_j8q7x")

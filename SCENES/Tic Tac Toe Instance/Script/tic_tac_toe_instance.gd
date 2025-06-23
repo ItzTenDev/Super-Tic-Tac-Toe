@@ -43,7 +43,7 @@ func open_game():
 	$Animator.play("Open_Game")
 	
 	for sub_slot in $Game_Block/GridContainer.get_children(): 
-		if sub_slot.text != "": sub_slot.disabled = true
+		if sub_slot.text in ["O", "X"]: sub_slot.disabled = true
 		else: sub_slot.disabled = false
 	
 	master_board.current_opened_game = self
