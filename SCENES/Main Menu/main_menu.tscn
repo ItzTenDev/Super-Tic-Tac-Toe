@@ -1,0 +1,297 @@
+[gd_scene load_steps=16 format=3 uid="uid://cvfmsefqxmlp4"]
+
+[ext_resource type="Script" path="res://SCENES/Main Menu/Script/Main_Menu.gd" id="1_tt8el"]
+[ext_resource type="Script" path="res://SCENES/Main Menu/Script/Play_Button.gd" id="2_2nb8n"]
+[ext_resource type="FontFile" uid="uid://dgb3nd3llgnhf" path="res://FONTS/xanmono/Xanmono-Regular.ttf" id="3_ixecb"]
+
+[sub_resource type="Animation" id="Animation_k1t4p"]
+resource_name = "Play_Button_Press"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash_Screen:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(60, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play_Button:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Play_Button:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0f4uj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash_Screen:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Play_Button:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Play_Button:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hrl8b"]
+_data = {
+"Play_Button_Press": SubResource("Animation_k1t4p"),
+"RESET": SubResource("Animation_0f4uj")
+}
+
+[sub_resource type="Animation" id="Animation_8xjcv"]
+resource_name = "Change_text"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sub_title:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(-0.5, -0.5, -0.5, -0.5),
+"update": 0,
+"values": [Color(0.273873, 0.273873, 0.273873, 1), Color(0.27451, 0.27451, 0.27451, 0), Color(0.27451, 0.27451, 0.27451, 0), Color(0.27451, 0.27451, 0.27451, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sub_title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(-0.5, -0.5, -0.5, -0.5),
+"update": 0,
+"values": [Vector2(44, 232), Vector2(45, 246), Vector2(45, 246), Vector2(44, 232)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"swap_text"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4p4oa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sub_title:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.273873, 0.273873, 0.273873, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sub_title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(44, 232)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5orjn"]
+_data = {
+"Change_text": SubResource("Animation_8xjcv"),
+"RESET": SubResource("Animation_4p4oa")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14od4"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_glkkt"]
+font = ExtResource("3_ixecb")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3q0g"]
+font = ExtResource("3_ixecb")
+font_color = Color(0.273873, 0.273873, 0.273873, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fxtb"]
+bg_color = Color(0.102242, 0.439197, 0.401978, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+corner_detail = 20
+anti_aliasing_size = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c2um"]
+bg_color = Color(0.12, 0.12, 0.12, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 10
+border_color = Color(0.147672, 0.147672, 0.147672, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+expand_margin_left = 15.0
+expand_margin_top = 5.0
+expand_margin_right = 15.0
+expand_margin_bottom = 5.0
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81gf4"]
+bg_color = Color(0.102242, 0.439197, 0.401978, 1)
+border_color = Color(0.101961, 0.439216, 0.403922, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+expand_margin_left = 15.0
+expand_margin_top = 5.0
+expand_margin_right = 15.0
+expand_margin_bottom = 5.0
+anti_aliasing_size = 0.25
+
+[node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_tt8el")
+
+[node name="Button_Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hrl8b")
+}
+
+[node name="Text_animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5orjn")
+}
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_14od4")
+
+[node name="Title" type="Label" parent="."]
+offset_top = 143.0
+offset_right = 1152.0
+offset_bottom = 305.0
+scale = Vector2(1, 0.88)
+text = "THE TITLE ?"
+label_settings = SubResource("LabelSettings_glkkt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sub_title" type="Label" parent="."]
+offset_left = 44.0
+offset_top = 232.0
+offset_right = 1101.0
+offset_bottom = 305.0
+text = "Yes, the subtitle is below the title, crazy Right ???"
+label_settings = SubResource("LabelSettings_k3q0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Splash_Screen" type="Panel" parent="."]
+offset_left = 618.0
+offset_top = 425.0
+offset_right = 649.0
+offset_bottom = 456.0
+pivot_offset = Vector2(19, 19)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4fxtb")
+
+[node name="Play_Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 448.0
+offset_top = 425.0
+offset_right = 704.0
+offset_bottom = 455.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(128, 15)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_ixecb")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_5c2um")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5c2um")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_81gf4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5c2um")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5c2um")
+toggle_mode = true
+keep_pressed_outside = true
+text = "PLAY AGAINST A FRIEND"
+script = ExtResource("2_2nb8n")
+
+[connection signal="animation_finished" from="Button_Animator" to="." method="_on_button_animator_animation_finished"]
+[connection signal="animation_finished" from="Text_animator" to="." method="_on_text_animator_animation_finished"]
+[connection signal="toggled" from="Play_Button" to="Play_Button" method="_on_toggled"]

@@ -1,0 +1,267 @@
+[gd_scene load_steps=14 format=3 uid="uid://bdbv72vcrybm7"]
+
+[ext_resource type="Script" path="res://SCENES/Main_Game_Scene/Scripts/Main_Game_Scene.gd" id="1_quvao"]
+[ext_resource type="FontFile" uid="uid://dgb3nd3llgnhf" path="res://FONTS/xanmono/Xanmono-Regular.ttf" id="2_rkswv"]
+
+[sub_resource type="Animation" id="Animation_xtwaq"]
+resource_name = "Game result"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Winning_title:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(-0.5, -2, -2, -0.5),
+"update": 0,
+"values": [Vector2(50, 162), Vector2(1548, 162), Vector2(1643, 162), Vector2(1281, 162)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Winning_title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(-0.5, -2, -2, -0.5),
+"update": 0,
+"values": [Vector2(1237, -86), Vector2(-210, 302), Vector2(-416, 357), Vector2(-1346, 606)]
+}
+
+[sub_resource type="Animation" id="Animation_6abgx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash_Screen:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(70, 70)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Back_Button:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.646447)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Back_Button:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Winning_title:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, 162)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Winning_title:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1237, -86)]
+}
+
+[sub_resource type="Animation" id="Animation_8memi"]
+resource_name = "Ready_Animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Splash_Screen:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(70, 70), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8b3qy"]
+_data = {
+"Game result": SubResource("Animation_xtwaq"),
+"RESET": SubResource("Animation_6abgx"),
+"Ready_Animation": SubResource("Animation_8memi")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxjpb"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbrw2"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7kflo"]
+font = ExtResource("2_rkswv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxnrf"]
+bg_color = Color(0.114897, 0.114897, 0.114897, 1)
+border_width_bottom = 25
+border_color = Color(0.113725, 0.113725, 0.113725, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0.152941)
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mdhl"]
+bg_color = Color(0.102242, 0.439197, 0.401978, 1)
+corner_radius_top_left = 500
+corner_radius_top_right = 500
+corner_radius_bottom_right = 500
+corner_radius_bottom_left = 500
+corner_detail = 20
+anti_aliasing_size = 0.05
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5aov7"]
+bg_color = Color(0.102242, 0.439197, 0.401978, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u0y36"]
+font = ExtResource("2_rkswv")
+font_size = 32
+
+[node name="Main_Game_Scene" type="Node2D"]
+script = ExtResource("1_quvao")
+
+[node name="Main_Game_Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8b3qy")
+}
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_oxjpb")
+
+[node name="Back_Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.646447)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(37, 18)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jbrw2")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 79.0
+text = "Turn to: "
+label_settings = SubResource("LabelSettings_7kflo")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main_Board" type="Panel" parent="."]
+offset_left = 320.0
+offset_top = 79.0
+offset_right = 820.0
+offset_bottom = 579.0
+pivot_offset = Vector2(250, 250)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_yxnrf")
+
+[node name="Board_Grid_Control" type="GridContainer" parent="Main_Board"]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 500.0
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(250, 250)
+theme_override_constants/h_separation = 175
+theme_override_constants/v_separation = 175
+columns = 3
+
+[node name="Splash_Screen" type="Panel" parent="."]
+offset_left = 576.0
+offset_top = 648.0
+offset_right = 614.0
+offset_bottom = 686.0
+scale = Vector2(70, 70)
+pivot_offset = Vector2(19, 19)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_0mdhl")
+
+[node name="Anti_Action_button" type="Button" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.646447)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(37, 18)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jbrw2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jbrw2")
+
+[node name="Winning_title" type="Panel" parent="."]
+offset_left = 1237.0
+offset_top = -86.0
+offset_right = 1287.0
+offset_bottom = 76.0
+rotation = -0.261799
+pivot_offset = Vector2(576, 81)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_5aov7")
+
+[node name="Winning_label" type="Label" parent="Winning_title"]
+layout_mode = 0
+offset_right = 1612.0
+offset_bottom = 162.0
+text = "TEXT PLACEHOLDER"
+label_settings = SubResource("LabelSettings_u0y36")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="Main_Game_Animator" to="." method="_on_main_game_animator_animation_finished"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Super Tic Tac Toe"
+config/description="A game where you have to spend a life time in order to finish one round.
+Abigaelle's idea, not mine, which means i am obviously smart, so smart that i accepted to make the game she asked for, for no other reward than fame, fame... fame ? What fame you might ask, well the fame that... uh... idk, she'll just know i know how to code and she'll be like \"Ohh you're so smart !\" and i'll be like \"I know you low level peasant, you might be rich but i have the KNOWLEDGE\", which is the typical broke line when you don't know what to say BUT it works ! And that's why i am smart (I think).
+
+Version naming : [year].[version group].[sub correction]"
+config/version="2025.1.0"
+run/main_scene="res://SCENES/Main Menu/main_menu.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalModule="*res://Global_Module.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

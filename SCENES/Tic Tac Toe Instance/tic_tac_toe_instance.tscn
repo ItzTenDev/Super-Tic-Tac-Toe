@@ -1,0 +1,424 @@
+[gd_scene load_steps=13 format=3 uid="uid://5sg23conitq2"]
+
+[ext_resource type="Script" path="res://SCENES/Tic Tac Toe Instance/Script/tic_tac_toe_instance.gd" id="1_4el3i"]
+[ext_resource type="FontFile" uid="uid://dgb3nd3llgnhf" path="res://FONTS/xanmono/Xanmono-Regular.ttf" id="2_7tn3r"]
+[ext_resource type="StyleBox" uid="uid://cj20uknmncccj" path="res://SCENES/Tic Tac Toe Instance/STYLE_BOX/Sub_Game_Slots_Style.tres" id="3_j8q7x"]
+
+[sub_resource type="Animation" id="Animation_gqaly"]
+resource_name = "Fade_away"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game_Block:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Game_Block:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Open_Game_Button:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Open_Game_Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_1247w"]
+resource_name = "Open_Game"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game_Block:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3.333, 3.333)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Open_Game_Button:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ewwqy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game_Block:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Open_Game_Button:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Game_Block:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Open_Game_Button:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_quteu"]
+resource_name = "Spawn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Game_Block:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Open_Game_Button:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y46hw"]
+_data = {
+"Fade_away": SubResource("Animation_gqaly"),
+"Open_Game": SubResource("Animation_1247w"),
+"RESET": SubResource("Animation_ewwqy"),
+"Spawn": SubResource("Animation_quteu")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ocec"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.121569, 0.121569, 0.121569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwavm"]
+bg_color = Color(0.133196, 0.133196, 0.133196, 1)
+corner_detail = 20
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewmaw"]
+bg_color = Color(0, 0, 0, 0.380392)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.121569, 0.121569, 0.121569, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+anti_aliasing_size = 0.25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yroy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Tic_Tac_Toe_Instance" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4el3i")
+game_board = null
+coords = null
+result = null
+
+[node name="Animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y46hw")
+}
+
+[node name="Game_Block" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(75, 75)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ocec")
+
+[node name="Bar_Hor_1" type="Panel" parent="Game_Block"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 150.0
+offset_bottom = 53.0
+pivot_offset = Vector2(75, 5)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_pwavm")
+
+[node name="Bar_Hor_2" type="Panel" parent="Game_Block"]
+layout_mode = 0
+offset_top = 100.0
+offset_right = 150.0
+offset_bottom = 103.0
+pivot_offset = Vector2(75, 5)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_pwavm")
+
+[node name="Bar_Ver_1" type="Panel" parent="Game_Block"]
+layout_mode = 0
+offset_left = 53.0
+offset_right = 203.0
+offset_bottom = 3.0
+rotation = 1.5708
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_pwavm")
+
+[node name="Bar_Ver_2" type="Panel" parent="Game_Block"]
+layout_mode = 0
+offset_left = 103.0
+offset_right = 253.0
+offset_bottom = 3.0
+rotation = 1.5708
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_pwavm")
+
+[node name="GridContainer" type="GridContainer" parent="Game_Block"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Play_Slot_1" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_2" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_3" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_4" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_5" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_6" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_7" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_8" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Play_Slot_9" type="Button" parent="Game_Block/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = ExtResource("3_j8q7x")
+theme_override_styles/hover = ExtResource("3_j8q7x")
+theme_override_styles/pressed = ExtResource("3_j8q7x")
+theme_override_styles/disabled = ExtResource("3_j8q7x")
+theme_override_styles/focus = ExtResource("3_j8q7x")
+
+[node name="Dark_Wall" type="Panel" parent="Game_Block"]
+visible = false
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+pivot_offset = Vector2(75, 75)
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ewmaw")
+
+[node name="Open_Game_Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+pivot_offset = Vector2(75, 75)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("2_7tn3r")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_2yroy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2yroy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2yroy")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_2yroy")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2yroy")
+disabled = true
+text = " "
+
+[connection signal="animation_finished" from="Animator" to="." method="_on_animator_animation_finished"]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_1" to="." method="_on_play_slot_pressed" binds= [1]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_2" to="." method="_on_play_slot_pressed" binds= [2]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_3" to="." method="_on_play_slot_pressed" binds= [3]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_4" to="." method="_on_play_slot_pressed" binds= [4]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_5" to="." method="_on_play_slot_pressed" binds= [5]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_6" to="." method="_on_play_slot_pressed" binds= [6]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_7" to="." method="_on_play_slot_pressed" binds= [7]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_8" to="." method="_on_play_slot_pressed" binds= [8]]
+[connection signal="pressed" from="Game_Block/GridContainer/Play_Slot_9" to="." method="_on_play_slot_pressed" binds= [9]]
+[connection signal="pressed" from="Open_Game_Button" to="." method="_on_open_game_button_pressed"]
