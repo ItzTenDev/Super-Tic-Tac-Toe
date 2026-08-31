@@ -1,7 +1,7 @@
 # ⌘ Super-Tic-Tac-Toe
 
 > [!NOTE]
-> Creation Period - Summer 2024
+> This project is in BETA.
 
 So, this project was originally a request from a friend, to make a super tic-tac-toe (S3T) as a playable game in mobile so they don't get bored in class (very bad idea, do not do this at school). I already knew the existence of this thing because i have watched a **VSauce** video about it. So i was like : "Meh, why not".
 
